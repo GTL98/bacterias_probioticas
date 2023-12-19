@@ -5,7 +5,7 @@ from selecionar_bacterias import selecionar_bacterias
 
 
 # --- Configuração da página --- #
-st.set_page_config(page_title='Bactérias Probióticas')
+st.set_page_config(page_title='Bactérias Probióticas', layout='wide')
 
 with st.container():
     # --- Título da página --- #
