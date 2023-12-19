@@ -21,8 +21,23 @@ with st.container():
         )
     )
 
+    # --- Selecionar a quantidade de funções probioóticas --- #
+    quantidade = st.radio(
+        'Selecione a quantidade de funções probióticas',
+        (
+            '5',
+            '6',
+            '7',
+            '8',
+            '9',
+            '10',
+            '11'
+        ),
+        horizontal=True
+    )
+
     # --- Selectbox com as bactérias --- #
-    bacterias = selecionar_bacterias(porcentagem)
+    bacterias = selecionar_bacterias(porcentagem, quantidade)
     bacteria = st.selectbox(
         'Bactérias:',
         bacterias,

@@ -2,10 +2,11 @@
 from csv import reader
 
 
-def selecionar_bacterias(porcentagem: str):
+def selecionar_bacterias(porcentagem: str, quantidade: str):
     """
     Função responsável por ler o arquivo CSV e retornar as bactérias.
     :param porcentagem: Porcentagem da análise para ler o arquivo.
+    :param quantidade: Quantidade de funções probióticas.
     :return: Lista com as bactérias presentes no arquivo CSV.
     """
     # --- Caminho do arquivo --- #
@@ -19,6 +20,8 @@ def selecionar_bacterias(porcentagem: str):
         conteudo = reader(doc)
         next(conteudo)
         for linha in conteudo:
-            bacterias.append(linha[0])
+            total_funcoes = int(linha[-1])
+            if total_funcoes >= int(quantidade):
+                bacterias.append(linha[0])
 
     return bacterias
