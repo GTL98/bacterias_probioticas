@@ -10,8 +10,12 @@ def ler_csv(porcentagem: int, bacteria_selecionada: str):
     :param bacteria_selecionada: Bactéria desejada para a análise.
     :return:
     """
+    # --- Criar as colunas para separar as funções --- #
+    col_1, col_2 = st.columns(2)
+
     # --- Caminho do arquivo --- #
     caminho = f'./bacterias_{porcentagem}/probioticos/probioticos.csv'
+
     # --- Ler o arquivo --- #
     with open(caminho, 'r') as doc:
         conteudo = reader(doc)
@@ -30,7 +34,6 @@ def ler_csv(porcentagem: int, bacteria_selecionada: str):
             tolerancia_gastro = int(linha[10])
             metabolismo_carbono = int(linha[11])
             total_funcoes = int(linha[12])
-            col_1, col_2 = st.columns(2)
             if bacteria == bacteria_selecionada:
                 with col_1:
                     st.header('Possui as funções de:')

@@ -48,4 +48,5 @@ with st.container():
     # --- Botão para acessar as informações --- #
     acessar = st.button('Acessar')
     if acessar:
-        ler_csv(porcentagem, bacteria)
+        with st.container():
+            ler_csv(porcentagem, bacteria)
